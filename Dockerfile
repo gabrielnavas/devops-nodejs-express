@@ -15,4 +15,4 @@ RUN npm install
 COPY . ./
 
 # iniciar o servidor
-CMD ["node", "server.js"]
+CMD ["yarn", "dev"]
