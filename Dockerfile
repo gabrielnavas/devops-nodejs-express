@@ -18,4 +18,4 @@ COPY . ./
 ENV PORT 4000
 
 # iniciar o servidor
-CMD ["yarn", "dev"]
+CMD ["node", "server.js"]

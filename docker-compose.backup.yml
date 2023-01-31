@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  node-app:
+    build: . # build o Dockerfile nesse diretório
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app:ro # mapear o código para /app, toda vez q mudar, atualizar o container. ro para read only
+      - /app/node_modules # preservar o node_modules
+    environment:
+      - PORT=3000
+    # env_file:
+    #   - ./.env # importar as variáveis de ambiente do .env
+    

@@ -1,0 +1,9 @@
+version: '3'
+services:
+  node-app:
+    volumes:
+      - ./:/app:ro # mapear o código para /app, toda vez q mudar, atualizar o container. ro para read only
+      - /app/node_modules # preservar o node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
