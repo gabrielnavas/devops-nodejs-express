@@ -15,7 +15,7 @@ RUN npm install
 COPY . ./
 
 # definir a porta nas varíaveis de ambiente
-ENV PORT 4000
+ENV PORT 3000
 
 # iniciar o servidor
 CMD ["yarn", "dev"]

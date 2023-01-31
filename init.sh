@@ -13,8 +13,8 @@ docker build -t node-app-image .
 docker run \
   -v $(pwd):/app:ro \
   -v /app/node_modules \
-  --env PORT=5000 \
+  --env-file ./.env \
   -d \
   --name node-app \
-  -p 3000:5000 \
+  -p 3000:4000 \
   node-app-image
