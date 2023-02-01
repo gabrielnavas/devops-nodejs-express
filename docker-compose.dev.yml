@@ -1,6 +1,10 @@
 version: '3'
 services:
   node-app:
+    build:
+      context: .
+      args:
+        NODE_ENV: development # variavel de ambiente para o Docker file
     volumes:
       - ./:/app:ro # mapear o código para /app, toda vez q mudar, atualizar o container. ro para read only
       - /app/node_modules # preservar o node_modules

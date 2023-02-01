@@ -8,8 +8,12 @@ WORKDIR /app
 # "." é o diretório /app
 COPY package.json .
 
-# instalar as dependências
-RUN npm install
+# escolher quais dependências instalar
+ARG NODE_ENV 
+RUN if [ "$NODE_ENV" = "development" ]; \
+      then npm install; \
+      else npm install --only=production; \
+    fi
 
 # copiar o código fonte para dentro da imagem
 COPY . ./
